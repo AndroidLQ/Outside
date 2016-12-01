@@ -5,6 +5,8 @@ package com.yunwang.model;
  */
 
 public class OutsidePhotoModel {
+    //位置
+    private int position;
     //标题
     private String title;
     //图片途径
@@ -31,8 +33,15 @@ public class OutsidePhotoModel {
     public boolean isBool() {
         return bool;
     }
-
     public void setBool(boolean bool) {
         this.bool = bool;
+    }
+
+    public int getPosition() {
+        return position;
+    }
+
+    public void setPosition(int position) {
+        this.position = position;
     }
 }
