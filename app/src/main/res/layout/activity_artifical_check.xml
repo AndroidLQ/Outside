@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_artifical_check"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.yunwang.ui.activity.ArtificalCheckActivity">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="@dimen/dimen_4"
+            android:layout_marginRight="@dimen/dimen_2"
+            android:background="@color/color_apply_bottom_line"
+            android:orientation="vertical">
+
+            <include
+                android:id="@+id/artifical_item1"
+                layout="@layout/common_tv_et_view"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dimen_50"
+                android:layout_marginTop="@dimen/dimen_20"></include>
+
+            <include
+                android:id="@+id/artifical_item2"
+                layout="@layout/common_tv_et_view"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dimen_50"
+                android:layout_marginTop="@dimen/dimen_20"></include>
+
+            <include
+                android:id="@+id/artifical_item3"
+                layout="@layout/common_tv_et_view"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dimen_50"
+                android:layout_marginTop="@dimen/dimen_20"></include>
+
+            <include
+                android:id="@+id/artifical_item4"
+                layout="@layout/common_tv_et_view"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dimen_50"
+                android:layout_marginTop="@dimen/dimen_20"></include>
+
+            <include
+                android:id="@+id/artifical_item5"
+                layout="@layout/common_tv_et_view"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dimen_50"
+                android:layout_marginTop="@dimen/dimen_20"></include>
+
+            <include
+                android:id="@+id/artifical_item6"
+                layout="@layout/common_tv_et_view"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dimen_50"
+                android:layout_marginTop="@dimen/dimen_20"></include>
+
+            <include
+                android:id="@+id/artifical_item7"
+                layout="@layout/common_tv_et_view"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dimen_50"
+                android:layout_marginTop="@dimen/dimen_20"></include>
+
+            <include
+                android:id="@+id/artifical_item8"
+                layout="@layout/common_tv_et_view"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dimen_50"
+                android:layout_marginTop="@dimen/dimen_20"></include>
+
+            <include
+                android:id="@+id/artifical_item9"
+                layout="@layout/common_tv_et_view"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dimen_200"
+                android:layout_marginTop="@dimen/dimen_20"></include>
+
+        </LinearLayout>
+    </ScrollView>
+
+
+</LinearLayout>

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:orientation="vertical">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dimen_50"
+        android:background="@color/tab_main_bg"
+        android:text="添加项目"
+        android:textColor="@color/color_white"
+        android:gravity="center"
+        android:textSize="@dimen/sp_20" />
+
+    <com.github.jdsjlzx.recyclerview.LRecyclerView
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dimen_400"
+        android:scrollbars="none"
+        android:id="@+id/recycler_view" />
+
+</LinearLayout>

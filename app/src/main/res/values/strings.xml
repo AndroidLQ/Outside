@@ -1,0 +1,71 @@
+<resources>
+    <string name="app_name">OutsideApp</string>
+    <string name="action_settings">Settings</string>
+
+    <!--第三方蓝牙设备-->
+    <string name="test_label_high">高于精度范围</string>
+    <string name="test_label_low">低于精度范围</string>
+    <string name="test_board_high">高于国标初始值</string>
+    <string name="test_board_near">接近国标初始值</string>
+    <string name="test_board_low">低于国标初始值</string>
+
+    <!--登录-->
+    <string name="please_input_user_login_account">请输入账号</string>
+    <string name="please_input_user_login_password">请输入密码</string>
+    <string name="remember_password">记住密码</string>
+    <string name="btn_login_text">登     录</string>
+
+    <!--登陆页-->
+    <string name="please_input_login_info">请输入账号或者密码</string>
+    <string name="et_user_login_account">请输入账号</string>
+    <string name="login_success">登录成功</string>
+    <string name="login_message">正在登录...</string>
+    <string name="tv_set_url">设置端口</string>
+
+    <!--网络连接-->
+    <string name="net_is_not_connected">小伙伴,请检查你的网络链接...</string>
+    <!--网络连接错误提示-->
+    <string name="net_connection_error">网络超时...</string>
+
+    <!--设置端口-->
+    <string name="tv_please_input_url">请输入端口</string>
+    <string name="tv_url">接口:</string>
+    <string name="tv_line_number">线号:</string>
+    <string name="tv_please_input_line_number">请输入线号</string>
+    <string name="tv_setting">设置</string>
+    <string name="tv_ensure">确定</string>
+
+    <!--主界面-->
+    <string name="tv_input_car_number">请输入部分车牌号码</string>
+    <string name="tv_select_car_number">选择检测车辆</string>
+    <string name="tv_query_carr">信息查询</string>
+    <string name="tv_query_history_car">历史任务</string>
+
+
+    <!--车辆信息查询界面-->
+    <string name="tv_query_information">查询</string>
+    <string name="tv_query_car_information">车辆信息查询</string>
+    <string name="tv_car_number">车牌号码:</string>
+    <string name="tv_please_complete_car_number">请输入完整车牌号</string>
+    <string name="tv_car_number_type">车牌种类:</string>
+    <string name="tv_identify_code">识别代码:</string>
+    <string name="tv_please_input_car_number">请输入车架号后四位</string>
+
+    <!--查询历史车辆-->
+    <string name="tv_please_input_car_number_select">请输入车牌号进行筛选</string>
+    <string name="tv_car_type">车辆类别</string>
+    <string name="tv_car_check_complete">车辆检测完成</string>
+
+    <!--检测项目选择-->
+    <string name="tv_check_project_selected">检测项目选择</string>
+    <string name="tv_detail_infomation">详细信息</string>
+    <string name="tv_check_outside">检测项</string>
+    <string name="tv_chassis_dynamic">底盘动态</string>
+    <string name="tv_other_infomation">其他信息录入</string>
+
+    <!--外观照片界面-->
+    <string name="tv_outside_photo">外观照片</string>
+    <string name="tv_check_item">检查项</string>
+    <string name="tv_upload">上传</string>
+
+</resources>

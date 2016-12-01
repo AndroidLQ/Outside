@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_chassis"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.yunwang.ui.activity.ChassisActivity">
+
+    <include
+        android:id="@+id/chassis_title_bar"
+        layout="@layout/layout_outsidephoto_title_view" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/chassis_title_bar"
+        android:layout_centerInParent="true"
+        android:layout_marginTop="@dimen/dimen_10"
+        android:text="00:00"
+        android:id="@+id/chassis_time_tv"
+        android:textColor="@color/color_dialog_bg"
+        android:textSize="@dimen/sp_14" />
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/chasis_check_start_btn"
+        android:background="@color/tab_main_bg"
+        android:text="底盘动态检验开始"
+        android:gravity="center"
+        android:textColor="@color/color_white"
+        android:textSize="@dimen/sp_18"
+        android:layout_below="@+id/chassis_time_tv"
+        android:layout_marginTop="@dimen/dimen_20"
+        android:layout_marginRight="@dimen/dimen_10"
+        android:layout_marginLeft="@dimen/dimen_10"/>
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/chasis_check_end_btn"
+        android:background="@color/tab_main_bg"
+        android:text="底盘动态检验结束"
+        android:gravity="center"
+        android:textColor="@color/color_white"
+        android:textSize="@dimen/sp_18"
+        android:layout_below="@+id/chasis_check_start_btn"
+        android:layout_marginTop="@dimen/dimen_20"
+        android:layout_marginRight="@dimen/dimen_10"
+        android:layout_marginLeft="@dimen/dimen_10"/>
+    
+
+</RelativeLayout>

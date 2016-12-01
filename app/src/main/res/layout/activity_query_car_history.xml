@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/ll_root_view"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/dimen_10"
+        android:layout_marginRight="@dimen/dimen_10"
+        android:layout_marginTop="@dimen/dimen_10"
+        android:orientation="horizontal"
+        android:paddingLeft="@dimen/dimen_10">
+
+        <TextView
+            android:id="@+id/tv_car_type"
+            android:layout_width="@dimen/dimen_0"
+            android:layout_height="match_parent"
+            android:layout_weight="2.0"
+            android:background="@drawable/shape_input_text_bg"
+            android:drawableRight="@mipmap/icon_down_arrow"
+            android:gravity="center"
+            android:minHeight="@dimen/dimen_40"
+            android:paddingLeft="@dimen/dimen_10"
+            android:text="@string/tv_car_type" />
+
+        <EditText
+            android:id="@+id/et_search"
+            android:layout_width="@dimen/dimen_0"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="@dimen/dimen_10"
+            android:layout_weight="4.0"
+            android:background="@drawable/shape_input_text_bg"
+            android:drawableLeft="@mipmap/icon_search"
+            android:drawablePadding="@dimen/dimen_4"
+            android:hint="@string/tv_please_input_car_number_select"
+            android:minHeight="@dimen/dimen_40"
+            android:paddingLeft="@dimen/dimen_4" />
+
+    </LinearLayout>
+
+    <include
+        layout="@layout/layout_line_view"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dimen_1" />
+
+    <com.github.jdsjlzx.recyclerview.LRecyclerView
+        android:id="@+id/recycler_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="@dimen/dimen_10" />
+
+</LinearLayout>

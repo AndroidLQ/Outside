@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_other_message"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.yunwang.ui.activity.OtherMessageActivity">
+
+    <include
+        android:id="@+id/other_message_mileage"
+        layout="@layout/common_tv_et_view"
+        android:layout_width="match_parent"
+        android:layout_marginTop="@dimen/dimen_20"
+        android:layout_height="@dimen/dimen_50"/>
+
+    <include
+        android:id="@+id/other_message_phone"
+        layout="@layout/common_tv_et_view"
+        android:layout_width="match_parent"
+        android:layout_marginTop="@dimen/dimen_20"
+        android:layout_height="@dimen/dimen_50"/>
+
+    <include
+        android:id="@+id/other_message_address"
+        layout="@layout/common_tv_et_view"
+        android:layout_width="match_parent"
+        android:layout_marginTop="@dimen/dimen_20"
+        android:layout_height="@dimen/dimen_200"/>
+
+</LinearLayout>

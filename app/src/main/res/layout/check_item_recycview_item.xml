@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="@dimen/dimen_8"
+    android:orientation="horizontal">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="号牌号码/车辆类型"
+        android:id="@+id/check_item_content"
+        android:textSize="@dimen/sp_16"
+        android:layout_weight="1"/>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="3.5"
+        android:id="@+id/check_item_type"
+        android:layout_margin="@dimen/dimen_2"
+        android:textSize="@dimen/sp_16"
+        android:text="不合格" />
+
+</LinearLayout>

@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:layout_width="match_parent"
+              android:layout_height="@dimen/dimen_50"
+              android:orientation="horizontal"
+              android:background="@color/tab_main_bg">
+
+    <LinearLayout
+        android:id="@+id/ll_back"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_centerVertical="true"
+        android:layout_alignParentLeft="true"
+        android:orientation="horizontal"
+        android:paddingLeft="@dimen/dimen_16"
+        android:paddingRight="@dimen/dimen_10">
+
+        <ImageView
+            android:id="@+id/iv_back"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:scaleType="centerCrop"
+            android:src="@mipmap/icon_back" />
+
+        <TextView
+            android:id="@+id/tv_back"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_alignParentLeft="true"
+            android:layout_gravity="center_vertical"
+            android:gravity="center"
+            android:text="返回"
+            android:layout_marginLeft="@dimen/dimen_4"
+            android:textColor="@color/color_white"
+            android:textSize="@dimen/tv_larger_size"
+            android:visibility="visible" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:orientation="vertical"
+        android:padding="@dimen/dimen_4">
+
+        <TextView
+            style="@style/CustomTextView"
+            android:text="@string/tv_outside_photo"
+            android:textSize="@dimen/sp_20"
+            android:id="@+id/outside_title_tv"
+            android:textColor="@color/color_white"/>
+
+        <TextView
+            android:id="@+id/outside_photo_pz_tv"
+            style="@style/CustomTextView"
+            android:text="(贵A09W95)"
+            android:textColor="@color/color_white"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true">
+
+        <Button
+            android:id="@+id/more_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="#00000000"
+            android:text="更多"
+            android:drawableRight="@mipmap/outside_photo_more"
+            android:textColor="@color/color_white" />
+
+    </LinearLayout>
+</RelativeLayout>

@@ -1,0 +1,83 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/dimen_16"
+    android:paddingLeft="@dimen/dimen_16"
+    android:paddingRight="@dimen/dimen_16"
+    android:paddingTop="@dimen/dimen_16"
+    tools:context="com.yunwang.ui.activity.MainActivity2" >
+
+
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+
+        android:layout_marginBottom="21dp"
+        android:layout_marginLeft="54dp"
+        android:orientation="vertical" >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/txt_status" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/txt_calibDate" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/txt_serial" />
+
+        <Button
+            android:id="@+id/reConnect"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="重新连接"
+            android:onClick="reConnect" />
+
+        <Button
+            android:id="@+id/cliberate_black"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="校准黑板"
+            android:onClick="caliberateBlack" />
+
+        <EditText
+            android:id="@+id/txt_ra"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="252"
+            android:inputType="number">
+
+            <requestFocus />
+        </EditText>
+
+        <Button
+            android:id="@+id/cliberate_white"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="校准白板"
+            android:onClick="caliberateWhite" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/txt_caliberation_result" />
+
+        <Button
+            android:id="@+id/start_test"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="开始测试"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/txt_test_result" />
+
+    </LinearLayout>
+
+</RelativeLayout>

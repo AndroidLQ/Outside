@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#3F51B5</color>
+    <color name="colorPrimaryDark">#303F9F</color>
+    <color name="colorAccent">#FF4081</color>
+    <color name="dialog_color_bg">#E5E5E5</color>
+
+    <color name="color_tv_login_title_press">#10226a</color>
+    <color name="color_tv_login_title_normal">#1C86EE</color>
+    <color name="color_black">#000000</color>
+    <color name="color_white">#ffffff</color>
+    <color name="color_line_view">#e5e5e5</color>
+    <color name="tab_main_bg">#102ea5</color>
+    <color name="tab_main_text_selected">#38acf9</color>
+    <color name="tab_main_text_normal">#9a9a9a</color>
+    <color name="color_login_tv">#bebebe</color>
+    <color name="color_login_btn">#0f2fa6</color>
+    <color name="color_tab_main_normal">#999999</color>
+    <color name="color_work_management">#36adfa</color>
+    <color name="color_work_type">#35adf7</color>
+    <color name="background_tab_pressed">#6633B5E5</color>
+    <color name="color_tv_msg">#dddadb</color>
+    <color name="color_view_bg">#f3f6f8</color>
+    <color name="color_tv_line_bottom">#0f30a2</color>
+    <color name="color_msg_bg">#fe0100</color>
+    <color name="color_dialog_bg">#6e6e6e</color>
+    <color name="color_task_transpond_bg">#EBEBEB</color>
+    <color name="color_person_document">#b8b8b8</color>
+    <color name="color_task_details_bg">#ebebeb</color>
+    <color name="color_task_details">#b2b2b2</color>
+
+
+    <!--人事管理颜色值-->
+    <color name="color_person_management_underlin">#f9f9f9</color>
+    <color name="color_attendance_record_item_time">#c7c7ca</color>
+    <color name="color_look_details">#e7e7e7</color>
+    <color name="color_person_management_bg">#f0f0f3</color>
+
+    <!--日历控件事件颜色-->
+    <color name="focus_circle_bg">#f24949</color>
+    <color name="color_date_week">#0e2ea3</color>
+    <color name="color_date_tv_month_right">#40ffffff</color>
+    <color name="color_date_bg">#f7f7f7</color>
+    <color name="color_date_line_view">#fafafa</color>
+
+    <!--添加工作记录-->
+    <color name="color_add_work_log">#cfcfcf</color>
+    <color name="color_btn_send">#0183f0</color>
+
+    <!--请假信息-->
+    <color name="color_leave_blue">#1b7dd7</color>
+    <color name="color_leave_line_view">#a1d1f0</color>
+    <color name="color_leave_bg">#f1f0f3</color>
+    <color name="color_leave_business_trip_bg">#f2b764</color>
+
+    <!--考勤详情-->
+    <color name="color_attendance_title">#ababae</color>
+
+    <!--选择图片-->
+    <color name="color_photo_picker">#bdbdbd</color>
+
+    <!--任务级别的背景-->
+    <color name="color_task_normal_level_bg">#00f021</color>
+    <color name="color_task_urgent_level_bg">#f9de02</color>
+    <color name="color_task_emergency_level_bg">#ec5d1e</color>
+    <color name="color_hand_bg">#b27836</color>
+
+    <!--新建任务文字颜色-->
+    <color name="color_new_task">#878787</color>
+    <color name="color_taks_normal_level">#98ff2a</color>
+    <color name="color_taks_emergency_level">#ffde00</color>
+    <color name="color_taks_urgent_level">#ff7e00</color>
+
+    <!--转发任务详情颜色-->
+    <color name="color_task_content">#ad7600</color>
+    <color name="color_taks_create_time">#161ab6</color>
+    <color name="color_taks_start_time">#06a436</color>
+    <color name="color_taks_end_time">#c02020</color>
+    <color name="color_taks_type">#3e96f9</color>
+    <color name="color_taks_state">#ff0000</color>
+
+    <color name="color_department">#6f80c1</color>
+    <color name="color_department_edge">#ebeaea</color>
+
+    <!--反馈任务-->
+    <color name="color_btn_cancle">#7ec0ee</color>
+    <color name="color_input_words_stroke">#252525</color>
+
+    <!--我的申请-->
+    <color name="color_apply_top_line">#fdfdfd</color>
+    <color name="color_apply_center_line">#f4f4f4</color>
+    <color name="color_apply_bottom_line">#ededed</color>
+    <color name="color_login_out_btn_cancle">#8c8c8c</color>
+    <color name="color_agree">#0085f1</color>
+    <color name="color_veto">#f9644e</color>
+    <color name="color_user_name">#ffaf0c</color>
+    <color name="color_user_name_detail">#45acee</color>
+    <color name="color_time_count">#ce9519</color>
+    <color name="color_error_time">#ff8d8d</color>
+
+    <!--决策支持-->
+    <color name="color_traffic_govern_block">#ff9000</color>
+
+    <!---->
+    <color name="color_task_hand_bg">#98FB98</color>
+
+</resources>

@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_car_apply"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.yunwang.ui.activity.CarApplyActivity">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:scrollbars="none">
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_margin="@dimen/dimen_2"
+            android:orientation="vertical">
+            <!-- 机动车所有人 -->
+
+            <include
+                layout="@layout/car_everybody_layout"
+                android:id="@+id/eveybody_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+            <!-- 代理人 -->
+            <include
+                layout="@layout/car_apply_agent_layout"
+                android:layout_marginTop="@dimen/dimen_10"
+                android:id="@+id/agent_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+            <!-- 申请 -->
+            <include
+                layout="@layout/car_apply_type_layout"
+                android:layout_marginTop="@dimen/dimen_10"
+                android:id="@+id/type_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+
+
+        </LinearLayout>
+
+    </ScrollView>
+
+</LinearLayout>

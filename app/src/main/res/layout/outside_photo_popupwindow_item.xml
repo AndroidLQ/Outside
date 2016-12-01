@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+              android:background="@drawable/user_message_item_bg"
+              android:layout_marginRight="@dimen/dimen_12"
+              android:orientation="vertical"
+              android:weightSum="1">
+
+        <Button
+            android:id="@+id/check_outside_btn"
+            android:layout_width="wrap_content"
+            android:layout_marginTop="@dimen/dimen_20"
+            android:layout_height="wrap_content"
+            android:drawableLeft="@mipmap/ic_launcher"
+            android:background="#00000000"
+            android:text="@string/tv_check_outside"
+            />
+
+        <Button
+            android:id="@+id/upload_photo_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="#00000000"
+            android:drawableLeft="@mipmap/ic_launcher"
+            android:text="@string/tv_upload"/>
+</LinearLayout>

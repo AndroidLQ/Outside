@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:minWidth="@dimen/dimen_180"
+    android:orientation="horizontal"
+    android:background="@color/color_dialog_bg"
+    android:paddingBottom="@dimen/dimen_10"
+    android:paddingLeft="@dimen/dimen_10"
+    android:paddingRight="@dimen/dimen_60"
+    android:paddingTop="@dimen/dimen_10">
+
+    <ImageView
+        android:id="@+id/iv_dialog"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="right|center_vertical"
+        android:src="@mipmap/dialog_bg" />
+
+    <TextView
+        android:id="@+id/tv_dialog"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginLeft="@dimen/dimen_10"
+        android:gravity="center"
+        android:text="123"
+        android:textColor="@color/color_white"
+        android:textSize="@dimen/tv_larger_size" />
+
+</LinearLayout>
