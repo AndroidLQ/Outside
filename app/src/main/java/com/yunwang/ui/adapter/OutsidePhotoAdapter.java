@@ -2,6 +2,7 @@ package com.yunwang.ui.adapter;
 
 import android.content.Context;
 import android.graphics.BitmapFactory;
+import android.util.Log;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.CheckBox;
@@ -41,17 +42,21 @@ public class OutsidePhotoAdapter extends BaseRecyclerViewAdapter<OutsidePhotoMod
         if (holder instanceof ViewHolder) {
             ViewHolder viewHolder = (ViewHolder) holder;
             OutsidePhotoModel outsidePhotoModel = datas.get(position);
-
-            if(!outsidePhotoModel.getImagePath().equals("")){
-                viewHolder.iv.setImageBitmap(BitmapFactory.decodeFile(outsidePhotoModel.getImagePath()));
-            }
-
+            Log.i("OutsidePhotoActivity",outsidePhotoModel.getPosition() + "-----"+ outsidePhotoModel.getImagePath() + "-----" + outsidePhotoModel.getTitle());
             if(position == datas.size() - 1 ){
                 viewHolder.cb.setVisibility(View.GONE);
+            }else{
+                viewHolder.cb.setVisibility(View.VISIBLE);
             }
 
             if (position == datas.size() - 1){
                 viewHolder.iv.setImageBitmap(BitmapFactory.decodeResource(mContext.getResources(),R.mipmap.outside_photo_add));
+            }else{
+                if(!outsidePhotoModel.getImagePath().equals("")){
+                    viewHolder.iv.setImageBitmap(BitmapFactory.decodeFile(outsidePhotoModel.getImagePath()));
+                }else{
+                    viewHolder.iv.setImageBitmap(BitmapFactory.decodeResource(mContext.getResources(),R.mipmap.ic_launcher));
+                }
             }
 
             viewHolder.title.setText(outsidePhotoModel.getTitle());
