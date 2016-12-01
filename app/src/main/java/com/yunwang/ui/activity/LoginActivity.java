@@ -165,7 +165,7 @@ public class LoginActivity extends BaseActivty implements View.OnClickListener, 
             case R.id.btn_login:
                 //隐藏软键盘
                 Util.hideInputMethodManagerKeyStore(mActivity);
-                startActivity(mActivity,CarApplyActivity.class,null,0,false);
+                startActivity(mActivity,MainActivity.class,null,0,false);
                 //登陆信息进行判断
 //              verdictLoginInfo();
                 break;
