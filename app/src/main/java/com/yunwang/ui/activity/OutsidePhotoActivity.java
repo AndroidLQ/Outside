@@ -18,6 +18,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.github.jdsjlzx.interfaces.OnItemClickListener;
+import com.github.jdsjlzx.interfaces.OnItemLongClickListener;
 import com.github.jdsjlzx.recyclerview.LRecyclerView;
 import com.github.jdsjlzx.recyclerview.LRecyclerViewAdapter;
 import com.yunwang.R;
@@ -28,6 +29,7 @@ import com.yunwang.model.OutsidePhotoModel;
 import com.yunwang.ui.adapter.OutsidePhotoAdapter;
 import com.yunwang.utils.Util;
 import com.yunwang.view.AddItemPopupWindows;
+import com.yunwang.view.BottomPopupOption;
 
 import org.xutils.view.annotation.ContentView;
 import org.xutils.view.annotation.ViewInject;
@@ -35,7 +37,7 @@ import org.xutils.view.annotation.ViewInject;
 import java.util.ArrayList;
 
 @ContentView(R.layout.activity_outside_photo)
-public class OutsidePhotoActivity extends BaseActivty implements OnItemClickListener, View.OnClickListener,SelectItemInterface{
+public class OutsidePhotoActivity extends BaseActivty implements OnItemClickListener, View.OnClickListener,SelectItemInterface,OnItemLongClickListener,BottomPopupOption.onPopupWindowItemClickListener {
     private String TAG = this.getClass().getSimpleName().toString();
     private String title[] = new String[]{"车厢内部照片","车厢内部照片","车厢内部照片","车厢内部照片","车厢内部照片","车厢内部照片"};
     private ArrayList<OutsidePhotoModel> datas = null;
@@ -88,6 +90,7 @@ public class OutsidePhotoActivity extends BaseActivty implements OnItemClickList
         recyclerView.setPullRefreshEnabled(false);
         //进行监听
         lRecyclerViewAdapter.setOnItemClickListener(this);
+        lRecyclerViewAdapter.setOnItemLongClickListener(this);
     }
 
     PopupWindow check_upload;
@@ -110,7 +113,10 @@ public class OutsidePhotoActivity extends BaseActivty implements OnItemClickList
         //comment by danielinbiti,如果添加了这行，那么标注1和标注2那两行不用加，加上这行的效果是点popupwindow的外边也能关闭
         check_upload.setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
         check_upload.setTouchable(true);
-        Util.backgroundAlpha(mActivity,0.5f);
+
+        BottomPopupOption bottomPopupOption = new BottomPopupOption(mActivity);
+        bottomPopupOption.setWindowAlpa(true);
+
         check_upload.showAsDropDown(view,-120,0);
 
     }
@@ -137,7 +143,8 @@ public class OutsidePhotoActivity extends BaseActivty implements OnItemClickList
     public void dismissPopupWindow() {
         if (check_upload != null && check_upload.isShowing()) {
             check_upload.dismiss();
-            Util.backgroundAlpha(mActivity,1f);
+            BottomPopupOption bottomPopupOption = new BottomPopupOption(mActivity);
+            bottomPopupOption.setWindowAlpa(false);
         }
     }
 
@@ -205,7 +212,6 @@ public class OutsidePhotoActivity extends BaseActivty implements OnItemClickList
     public void onClick(View v) {
         switch (v.getId()) {
             case R.id.more_btn:
-                Util.backgroundAlpha(mActivity,1f);
                 if(check_upload != null && check_upload.isShowing()){
                     dismissPopupWindow();
                 }else{
@@ -263,19 +269,29 @@ public class OutsidePhotoActivity extends BaseActivty implements OnItemClickList
 
 
     public void deleteData(int pos){
-//
-//        mDatas.remove(pos);
-//
-//        notifyItemRemoved(pos);
-//
-//        // 加入如下代码保证position的位置正确性
-//
-//        if (pos != mDatas.size() - 1) {
-//
-//            notifyItemRangeChanged(pos, mDatas.size() - pos);
-//
-//        }
+        datas.remove(pos);
+        outsidePhotoAdapter.notifyItemRemoved(pos);
+        // 加入如下代码保证position的位置正确性
+        if (pos != datas.size() - 1) {
+            outsidePhotoAdapter.notifyItemRangeChanged(pos, datas.size() - pos);
+        }
 
     }
 
+    BottomPopupOption bottomPopupOption;
+    @Override
+    public void onItemLongClick(View view, int position) {
+        if(bottomPopupOption == null){
+            bottomPopupOption = new BottomPopupOption(mActivity);
+        }
+        bottomPopupOption.setItemText("通过拍照添加", "通过相册添加","查看图片","重新上传");
+        bottomPopupOption.showPopupWindow();
+        bottomPopupOption.setItemClickListener(this);
+    }
+
+    @Override
+    public void onItemClick(int position) {
+        Toast.makeText(mActivity,"positon"+ position , Toast.LENGTH_LONG).show();
+
+    }
 }

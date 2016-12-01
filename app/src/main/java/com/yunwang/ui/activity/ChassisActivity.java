@@ -21,6 +21,7 @@ import com.google.android.gms.common.api.GoogleApiClient;
 import com.yunwang.R;
 import com.yunwang.base.BaseActivty;
 import com.yunwang.utils.Util;
+import com.yunwang.view.BottomPopupOption;
 
 import org.w3c.dom.Text;
 import org.xutils.view.annotation.ContentView;
@@ -82,7 +83,10 @@ public class ChassisActivity extends BaseActivty implements View.OnClickListener
         //comment by danielinbiti,如果添加了这行，那么标注1和标注2那两行不用加，加上这行的效果是点popupwindow的外边也能关闭
         check_upload.setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
         check_upload.setTouchable(true);
-        Util.backgroundAlpha(mActivity,0.5f);
+
+        //动态改变activity背景透明度
+        BottomPopupOption bottomPopupOption = new BottomPopupOption(mActivity);
+        bottomPopupOption.setWindowAlpa(true);
 
         check_upload.showAsDropDown(view,-120,0);
     }
@@ -90,7 +94,9 @@ public class ChassisActivity extends BaseActivty implements View.OnClickListener
     public void dismissPopupWindow() {
         if (check_upload != null && check_upload.isShowing()) {
             check_upload.dismiss();
-            Util.backgroundAlpha(mActivity,1f);
+
+            BottomPopupOption bottomPopupOption = new BottomPopupOption(mActivity);
+            bottomPopupOption.setWindowAlpa(false);
         }
     }
 

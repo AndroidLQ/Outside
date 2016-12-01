@@ -104,4 +104,6 @@
     <!---->
     <color name="color_task_hand_bg">#98FB98</color>
 
+    <color name="list_divider_line">#e7e7e7</color>
+
 </resources>

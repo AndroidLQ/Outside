@@ -154,17 +154,6 @@ public class Util {
         }
         return null;
     }
-    /**
-     * 设置添加屏幕的背景透明度
-     * @param bgAlpha
-     */
-    public static void backgroundAlpha(Activity context, float bgAlpha)
-    {
-        WindowManager.LayoutParams lp = context.getWindow().getAttributes();
-        lp.alpha = bgAlpha;
-        context.getWindow().addFlags(WindowManager.LayoutParams.FLAG_DIM_BEHIND);
-        context.getWindow().setAttributes(lp);
-    }
 
 
     /** 隐藏软键盘 */
