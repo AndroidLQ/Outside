@@ -44,7 +44,7 @@ public class OutsidePhotoActivity extends BaseActivty implements OnItemClickList
     private int selectPosition;
 
     private AddItemPopupWindows addItemPopupWindows;
-    private ArrayList<String> addDatas;
+    private ArrayList<String> titleDatas;
     private String addTitle[] = new String[]{"车厢内部照片1","车厢内部照片2","车厢内部照片3","车厢内部照片4","车厢内部照片5","车厢内部照片6","车厢内部照片","车厢内部照片","车厢内部照片","车厢内部照片","车厢内部照片","车厢内部照片"};
 
     @ViewInject(R.id.outside_photo_pz_tv)
@@ -111,9 +111,8 @@ public class OutsidePhotoActivity extends BaseActivty implements OnItemClickList
         check_upload.setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
         check_upload.setTouchable(true);
         Util.backgroundAlpha(mActivity,0.5f);
-
-
         check_upload.showAsDropDown(view,-120,0);
+
     }
 
     @Override
@@ -150,6 +149,7 @@ public class OutsidePhotoActivity extends BaseActivty implements OnItemClickList
             outsidePhotoModel.setImagePath("");
             outsidePhotoModel.setTitle(title[i]);
             outsidePhotoModel.setBool(true);
+            outsidePhotoModel.setPosition(i);
             datas.add(outsidePhotoModel);
         }
 
@@ -166,7 +166,7 @@ public class OutsidePhotoActivity extends BaseActivty implements OnItemClickList
             selectPosition = position;
         }else if(position == datas.size() - 1 ){
             initAddDatas();
-            addItemPopupWindows = new AddItemPopupWindows(mActivity, addDatas,this);
+            addItemPopupWindows = new AddItemPopupWindows(mActivity, titleDatas,this);
             // 显示PopupWindow
             addItemPopupWindows.showAtLocation(mActivity.findViewById(R.id.activity_outside_photo),
                     Gravity.BOTTOM|Gravity.CENTER_HORIZONTAL, 0, 0);
@@ -175,9 +175,9 @@ public class OutsidePhotoActivity extends BaseActivty implements OnItemClickList
     }
 
     private void initAddDatas() {
-        addDatas = new ArrayList<>();
+        titleDatas = new ArrayList<>();
         for (int i = 0 ; i < addTitle.length ; i++){
-            addDatas.add(addTitle[i]);
+            titleDatas.add(addTitle[i]);
         }
     }
 
@@ -195,8 +195,7 @@ public class OutsidePhotoActivity extends BaseActivty implements OnItemClickList
                     outsidePhotoModel.setTitle(datas.get(selectPosition).getTitle());
                     outsidePhotoModel.setBool(datas.get(selectPosition).isBool());
                     datas.set(selectPosition, outsidePhotoModel);
-
-                    initRecycleview();
+                    outsidePhotoAdapter.notifyItemChanged(selectPosition);
                 }
             });
         }
@@ -235,22 +234,48 @@ public class OutsidePhotoActivity extends BaseActivty implements OnItemClickList
         OutsidePhotoModel outsidePhotoModel = new OutsidePhotoModel();
         outsidePhotoModel.setImagePath("");
         outsidePhotoModel.setTitle("");
+        outsidePhotoModel.setPosition(datas.size());
         datas.add(outsidePhotoModel);
     }
 
     @Override
     public void getTitle(String title) {
         //先移除否则会混乱
-        recyclerView.removeAllViews();
+        addData(title);
+
+        addItemPopupWindows.dismiss();
+    }
+
+
+    public void addData(String title){
+        int pos = datas.size()-1;
         OutsidePhotoModel outsidePhotoModel = new OutsidePhotoModel();
         outsidePhotoModel.setImagePath("");
         outsidePhotoModel.setTitle(title);
         outsidePhotoModel.setBool(false);
-        datas.remove(datas.size()-1);
-        datas.add(outsidePhotoModel);
+        outsidePhotoModel.setPosition(pos);
+        datas.set(pos,outsidePhotoModel);
         addEndItem();
+        outsidePhotoAdapter.notifyDataSetChanged();;
 
-        initRecycleview();
-        addItemPopupWindows.dismiss();
     }
+
+
+
+    public void deleteData(int pos){
+//
+//        mDatas.remove(pos);
+//
+//        notifyItemRemoved(pos);
+//
+//        // 加入如下代码保证position的位置正确性
+//
+//        if (pos != mDatas.size() - 1) {
+//
+//            notifyItemRangeChanged(pos, mDatas.size() - pos);
+//
+//        }
+
+    }
+
 }
