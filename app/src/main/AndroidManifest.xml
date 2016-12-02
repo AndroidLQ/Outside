@@ -95,6 +95,11 @@
         <activity android:name=".ui.activity.ChassisActivity"/>
         <activity android:name=".ui.activity.CarApplyActivity">
         </activity>
+
+        <activity
+            android:theme="@style/customTheme"
+            android:name="me.iwf.photopicker.PhotoPickerActivity"
+            />
     </application>
 
 </manifest>

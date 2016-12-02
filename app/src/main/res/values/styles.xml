@@ -66,4 +66,16 @@
         <item name="android:windowExitAnimation">@anim/out_anim</item>
     </style>
 
+    <style name="customTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="actionBarTheme">@style/actionBarTheme</item>
+        <item name="colorPrimary">@color/tab_main_bg</item>
+        <item name="actionBarSize">@dimen/dimen_32</item>
+        <item name="colorPrimaryDark">@color/tab_main_bg</item>
+    </style>
+
+    <style name="actionBarTheme" parent="ThemeOverlay.AppCompat.Dark.ActionBar">
+        <item name="android:textColorPrimary">@android:color/white</item>
+        <item name="actionBarSize">@dimen/dimen_32</item>
+    </style>
+
 </resources>

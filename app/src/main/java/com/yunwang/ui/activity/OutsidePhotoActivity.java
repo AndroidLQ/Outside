@@ -35,11 +35,15 @@ import org.xutils.view.annotation.ContentView;
 import org.xutils.view.annotation.ViewInject;
 
 import java.util.ArrayList;
+import java.util.List;
+
+import me.iwf.photopicker.PhotoPicker;
+import me.iwf.photopicker.PhotoPreview;
 
 @ContentView(R.layout.activity_outside_photo)
-public class OutsidePhotoActivity extends BaseActivty implements OnItemClickListener, View.OnClickListener,SelectItemInterface,OnItemLongClickListener,BottomPopupOption.onPopupWindowItemClickListener {
+public class OutsidePhotoActivity extends BaseActivty implements OnItemClickListener, View.OnClickListener, SelectItemInterface, OnItemLongClickListener, BottomPopupOption.onPopupWindowItemClickListener {
     private String TAG = this.getClass().getSimpleName().toString();
-    private String title[] = new String[]{"车厢内部照片","车厢内部照片","车厢内部照片","车厢内部照片","车厢内部照片","车厢内部照片"};
+    private String title[] = new String[]{"车厢内部照片", "车厢内部照片", "车厢内部照片", "车厢内部照片", "车厢内部照片", "车厢内部照片"};
     private ArrayList<OutsidePhotoModel> datas = null;
     private OutsidePhotoAdapter outsidePhotoAdapter;
     private GetPhotoManager getPhotoManager;
@@ -47,7 +51,7 @@ public class OutsidePhotoActivity extends BaseActivty implements OnItemClickList
 
     private AddItemPopupWindows addItemPopupWindows;
     private ArrayList<String> titleDatas;
-    private String addTitle[] = new String[]{"车厢内部照片1","车厢内部照片2","车厢内部照片3","车厢内部照片4","车厢内部照片5","车厢内部照片6","车厢内部照片","车厢内部照片","车厢内部照片","车厢内部照片","车厢内部照片","车厢内部照片"};
+    private String addTitle[] = new String[]{"车厢内部照片1", "车厢内部照片2", "车厢内部照片3", "车厢内部照片4", "车厢内部照片5", "车厢内部照片6", "车厢内部照片", "车厢内部照片", "车厢内部照片", "车厢内部照片", "车厢内部照片", "车厢内部照片"};
 
     @ViewInject(R.id.outside_photo_pz_tv)
     private TextView pz_tv;
@@ -80,7 +84,7 @@ public class OutsidePhotoActivity extends BaseActivty implements OnItemClickList
         initRecycleview();
     }
 
-    public void initRecycleview(){
+    public void initRecycleview() {
         //设置布局方式
         recyclerView.setLayoutManager(new GridLayoutManager(this, 3));
         outsidePhotoAdapter = new OutsidePhotoAdapter(this, datas);
@@ -117,7 +121,7 @@ public class OutsidePhotoActivity extends BaseActivty implements OnItemClickList
         BottomPopupOption bottomPopupOption = new BottomPopupOption(mActivity);
         bottomPopupOption.setWindowAlpa(true);
 
-        check_upload.showAsDropDown(view,-120,0);
+        check_upload.showAsDropDown(view, -120, 0);
 
     }
 
@@ -125,19 +129,19 @@ public class OutsidePhotoActivity extends BaseActivty implements OnItemClickList
     protected void onPause() {
         super.onPause();
         dismissPopupWindow();
-        Log.i(TAG,"onPause");
+        Log.i(TAG, "onPause");
     }
 
     @Override
     protected void onResume() {
         super.onResume();
-        Log.i(TAG,"onResume");
+        Log.i(TAG, "onResume");
     }
 
     @Override
     protected void onStop() {
         super.onStop();
-        Log.i(TAG,"onStop");
+        Log.i(TAG, "onStop");
     }
 
     public void dismissPopupWindow() {
@@ -171,19 +175,19 @@ public class OutsidePhotoActivity extends BaseActivty implements OnItemClickList
             //跳转系统拍照
             getPhotoManager.chooseFromCamera();
             selectPosition = position;
-        }else if(position == datas.size() - 1 ){
+        } else if (position == datas.size() - 1) {
             initAddDatas();
-            addItemPopupWindows = new AddItemPopupWindows(mActivity, titleDatas,this);
+            addItemPopupWindows = new AddItemPopupWindows(mActivity, titleDatas, this);
             // 显示PopupWindow
             addItemPopupWindows.showAtLocation(mActivity.findViewById(R.id.activity_outside_photo),
-                    Gravity.BOTTOM|Gravity.CENTER_HORIZONTAL, 0, 0);
+                    Gravity.BOTTOM | Gravity.CENTER_HORIZONTAL, 0, 0);
         }
 
     }
 
     private void initAddDatas() {
         titleDatas = new ArrayList<>();
-        for (int i = 0 ; i < addTitle.length ; i++){
+        for (int i = 0; i < addTitle.length; i++) {
             titleDatas.add(addTitle[i]);
         }
     }
@@ -206,15 +210,26 @@ public class OutsidePhotoActivity extends BaseActivty implements OnItemClickList
                 }
             });
         }
+
+        if (resultCode == RESULT_OK && (requestCode == PhotoPicker.REQUEST_CODE || requestCode == PhotoPreview.REQUEST_CODE)) {
+            List<String> photos = null;
+            if (data != null) {
+                photos = data.getStringArrayListExtra(PhotoPicker.KEY_SELECTED_PHOTOS);
+                changeDatasItem(selectPosition,photos);
+                outsidePhotoAdapter.notifyItemChanged(selectPosition);
+            }
+        }
+        bottomPopupOption.dismiss();
+
     }
 
     @Override
     public void onClick(View v) {
         switch (v.getId()) {
             case R.id.more_btn:
-                if(check_upload != null && check_upload.isShowing()){
+                if (check_upload != null && check_upload.isShowing()) {
                     dismissPopupWindow();
-                }else{
+                } else {
                     showPopupWindow(v);
                 }
                 break;
@@ -225,7 +240,7 @@ public class OutsidePhotoActivity extends BaseActivty implements OnItemClickList
                 break;
             //上传
             case R.id.upload_photo_btn:
-                Toast.makeText(mActivity,"点击上传",Toast.LENGTH_LONG).show();
+                Toast.makeText(mActivity, "点击上传", Toast.LENGTH_LONG).show();
                 break;
             case R.id.ll_back:
                 finish();
@@ -235,7 +250,7 @@ public class OutsidePhotoActivity extends BaseActivty implements OnItemClickList
 
     }
 
-    public void addEndItem(){
+    public void addEndItem() {
         //最后一个
         OutsidePhotoModel outsidePhotoModel = new OutsidePhotoModel();
         outsidePhotoModel.setImagePath("");
@@ -252,46 +267,68 @@ public class OutsidePhotoActivity extends BaseActivty implements OnItemClickList
         addItemPopupWindows.dismiss();
     }
 
+    public void changeDatasItem(int pos,List<String> list){
+        OutsidePhotoModel outsidePhotoModel = datas.get(pos);
+        outsidePhotoModel.setImagePath(list.get(0));
+        datas.set(pos, outsidePhotoModel);
+    }
 
-    public void addData(String title){
-        int pos = datas.size()-1;
+    public void addData(String title) {
+        int pos = datas.size() - 1;
         OutsidePhotoModel outsidePhotoModel = new OutsidePhotoModel();
         outsidePhotoModel.setImagePath("");
         outsidePhotoModel.setTitle(title);
         outsidePhotoModel.setBool(false);
         outsidePhotoModel.setPosition(pos);
-        datas.set(pos,outsidePhotoModel);
+        datas.set(pos, outsidePhotoModel);
         addEndItem();
-        outsidePhotoAdapter.notifyDataSetChanged();;
-
+        outsidePhotoAdapter.notifyDataSetChanged();
     }
 
 
-
-    public void deleteData(int pos){
+    public void deleteData(int pos) {
         datas.remove(pos);
         outsidePhotoAdapter.notifyItemRemoved(pos);
         // 加入如下代码保证position的位置正确性
         if (pos != datas.size() - 1) {
             outsidePhotoAdapter.notifyItemRangeChanged(pos, datas.size() - pos);
         }
-
+        bottomPopupOption.dismiss();
     }
 
     BottomPopupOption bottomPopupOption;
+
     @Override
     public void onItemLongClick(View view, int position) {
-        if(bottomPopupOption == null){
+        if (bottomPopupOption == null) {
             bottomPopupOption = new BottomPopupOption(mActivity);
         }
-        bottomPopupOption.setItemText("通过拍照添加", "通过相册添加","查看图片","重新上传");
+        selectPosition = position;
+        bottomPopupOption.setItemText("添加图片", "查看图片", "重新上传","删除");
         bottomPopupOption.showPopupWindow();
         bottomPopupOption.setItemClickListener(this);
     }
 
     @Override
     public void onItemClick(int position) {
-        Toast.makeText(mActivity,"positon"+ position , Toast.LENGTH_LONG).show();
+        switch (position) {
+            //添加图片
+            case 0:
+                PhotoPicker.builder().setPhotoCount(1).start(this);
+                break;
+            //查看图片
+            case 1:
+
+                break;
+            //重新上传
+            case 2:
+
+                break;
+            //删除
+            case 3:
+                deleteData(selectPosition);
+                break;
+        }
 
     }
 }
