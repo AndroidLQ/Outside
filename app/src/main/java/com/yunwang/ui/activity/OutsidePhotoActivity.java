@@ -219,7 +219,7 @@ public class OutsidePhotoActivity extends BaseActivty implements OnItemClickList
                 outsidePhotoAdapter.notifyItemChanged(selectPosition);
             }
         }
-        bottomPopupOption.dismiss();
+        if(bottomPopupOption != null) bottomPopupOption.dismiss();
 
     }
 
