@@ -177,7 +177,7 @@ public class OutsidePhotoActivity extends BaseActivty implements OnItemClickList
             selectPosition = position;
         } else if (position == datas.size() - 1) {
             initAddDatas();
-            addItemPopupWindows = new AddItemPopupWindows(mActivity, titleDatas, this);
+            addItemPopupWindows = new AddItemPopupWindows(mActivity, titleDatas, this,"添加项目");
             // 显示PopupWindow
             addItemPopupWindows.showAtLocation(mActivity.findViewById(R.id.activity_outside_photo),
                     Gravity.BOTTOM | Gravity.CENTER_HORIZONTAL, 0, 0);

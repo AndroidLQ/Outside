@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_select_check_item"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="@dimen/dimen_4"
+    tools:context="com.yunwang.ui.activity.SelectCheckItemActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/car_select_ll"
+        android:orientation="vertical">
+        <TextView
+            android:id="@+id/car_tv"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/dimen_6"
+            android:text="车辆类型选择"
+            android:textSize="@dimen/sp_18"
+            android:gravity="center|left"
+            android:drawableStart="@mipmap/car"
+            android:drawableEnd="@mipmap/down"/>
+
+    </LinearLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scrollbars="none">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/content"
+            android:orientation="vertical">
+
+
+        </LinearLayout>
+    </ScrollView>
+
+
+
+</LinearLayout>

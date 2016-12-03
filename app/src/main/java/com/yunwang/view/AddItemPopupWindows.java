@@ -8,6 +8,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.PopupWindow;
+import android.widget.TextView;
 
 import com.github.jdsjlzx.interfaces.OnItemClickListener;
 import com.github.jdsjlzx.recyclerview.LRecyclerView;
@@ -32,7 +33,7 @@ public class AddItemPopupWindows extends PopupWindow implements  OnItemClickList
     private SelectItemInterface selectItemInterface;
     private Context mContext;
 
-    public AddItemPopupWindows(Activity context,ArrayList<String> datas,SelectItemInterface selectItemInterface) {
+    public AddItemPopupWindows(Activity context,ArrayList<String> datas,SelectItemInterface selectItemInterface,String title_str) {
         super(context);
 
         this.datas = datas;
@@ -43,6 +44,8 @@ public class AddItemPopupWindows extends PopupWindow implements  OnItemClickList
 
         LayoutInflater inflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
         mView = inflater.inflate(R.layout.outside_photo_popupwindow_view, null);
+        TextView title = (TextView) mView.findViewById(R.id.title_tv);
+        title.setText(title_str);
 
         initView(mView);
 
