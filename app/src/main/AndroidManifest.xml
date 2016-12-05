@@ -22,7 +22,7 @@
         android:theme="@style/AppTheme"
         tools:replace="android:icon,android:theme">
         <activity
-            android:name=".ui.activity.SelectCheckItemActivity"
+            android:name=".ui.activity.WelcomeActivity"
             android:label="@string/app_name"
             android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>
@@ -92,11 +92,15 @@
             android:name=".ui.activity.OutsideCheckItemActivity"
             android:launchMode="singleTask" />
         <!-- 底盘动态界面 -->
-        <activity android:name=".ui.activity.ChassisActivity" />
-        <activity android:name=".ui.activity.CarApplyActivity"></activity>
+        <activity android:name=".ui.activity.ChassisActivity"
+            android:launchMode="singleTask" />
+        <activity android:name=".ui.activity.CarApplyActivity"
+                  android:launchMode="singleTask" />
         <activity
             android:name="me.iwf.photopicker.PhotoPickerActivity"
             android:theme="@style/customTheme" />
+        <activity android:name=".ui.activity.SelectCheckItemActivity"
+            android:launchMode="singleTask"/>
     </application>
 
 </manifest>
