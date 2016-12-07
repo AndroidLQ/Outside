@@ -1,1 +1,1 @@
-include ':app', ':SwipeBackLayout', ':LRecyclerview_library', ':Universal-Image-Loader', ':AddressSelect_library', ':pickerview', ':PhotoPicker'
+include ':app', ':SwipeBackLayout', ':LRecyclerview_library', ':Universal-Image-Loader', ':AddressSelect_library', ':pickerview', ':PhotoPicker', ':commons', ':core'

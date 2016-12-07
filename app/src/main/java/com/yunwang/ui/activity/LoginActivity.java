@@ -12,6 +12,7 @@ import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 
+import com.afollestad.materialdialogs.MaterialDialog;
 import com.yunwang.R;
 import com.yunwang.base.BaseActivty;
 import com.yunwang.manager.PreferenceManager;
@@ -168,6 +169,7 @@ public class LoginActivity extends BaseActivty implements View.OnClickListener, 
                 startActivity(mActivity,MainActivity.class,null,0,false);
                 //登陆信息进行判断
 //              verdictLoginInfo();
+
                 break;
             case R.id.ll_set_url://跳转到设置URL界面
                 startActivity(mActivity,SetUrlActivity.class,null,0,false);

@@ -91,16 +91,25 @@
         <activity
             android:name=".ui.activity.OutsideCheckItemActivity"
             android:launchMode="singleTask" />
+
         <!-- 底盘动态界面 -->
-        <activity android:name=".ui.activity.ChassisActivity"
+        <activity
+            android:name=".ui.activity.ChassisActivity"
             android:launchMode="singleTask" />
-        <activity android:name=".ui.activity.CarApplyActivity"
-                  android:launchMode="singleTask" />
+
+        <activity
+            android:name=".ui.activity.CarApplyActivity"
+            android:launchMode="singleTask" />
+
         <activity
             android:name="me.iwf.photopicker.PhotoPickerActivity"
             android:theme="@style/customTheme" />
-        <activity android:name=".ui.activity.SelectCheckItemActivity"
+
+        <activity
+            android:name=".ui.activity.SelectCheckItemActivity"
             android:launchMode="singleTask"/>
+        <meta-data android:value="${UMENG_CHANNEL_VALUE}" android:name="UMENG_CHANNEL"/>
+
     </application>
 
 </manifest>
